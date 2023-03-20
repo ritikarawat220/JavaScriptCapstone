@@ -37,3 +37,8 @@ a{
     justify-content: space-evenly;
     align-items: center;
   }
+  .nav-link:hover {
+    color: blue;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+  }
