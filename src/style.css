@@ -1,0 +1,32 @@
+.logo{
+    border-radius: 50%;
+    border-color: black;
+    background-color: black;
+    height: 50px;
+}
+.header{
+    background-color: azure;
+  padding: 3%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none; 
+}
+.header ul li{
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
