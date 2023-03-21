@@ -1,4 +1,4 @@
 import "./style.css";
-import fetchFucntion from './modules/Api';
+import fetchFucntion from "./modules/Api";
 
 fetchFucntion();
