@@ -1,7 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Ubuntu+Mono:ital@1&family=Work+Sans:wght@400;500;800&display=swap');
 .logo {
-  border-radius: 50%;
-  border: 2px solid black;
   height: 50px;
   display: flex;
   flex-direction: row;
