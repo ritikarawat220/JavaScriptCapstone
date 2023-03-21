@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/ritikarawat220/JavaScriptCapstone#readme",
   "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/eslint-parser": "^7.21.3",
+    "@babel/eslint-plugin": "^7.19.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
     "csv-loader": "^3.0.5",
