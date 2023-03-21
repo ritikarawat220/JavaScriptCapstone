@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Ubuntu+Mono:ital@1&family=Work+Sans:wght@400;500;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -23,9 +24,6 @@ body {
   width: 60px;
 }
 
-
-
-
 a {
   text-decoration: none;
   font-size: 45px;
@@ -40,22 +38,6 @@ a {
   align-items: center;
 }
 
-.nav-link:hover {
-  color: blue;
-  background-color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-
-.meal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
 .meal img {
   width: 50%;
 }
@@ -64,6 +46,7 @@ a {
   width: 70%;
   height: 30px;
 }
+
 .comment:hover {
   background-color: rgb(232, 13, 155);
   color: #fff;
@@ -74,9 +57,6 @@ a {
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
-
-
-
 
 .header {
   background-color: black;
@@ -99,17 +79,13 @@ a {
   margin-left: 20px;
 }
 
-
-
 .container {
   height: 90vh;
   width: 100vw;
-  background: linear-gradient(135deg, #5324c3, #ff00b1);
+  background: linear-gradient(135deg, #3f0, #ff00a5);
   display: flex;
   gap: 2rem;
 }
-
-
 
 .meal {
   padding: 1rem;
@@ -131,6 +107,7 @@ a {
   width: 300px;
   background-color: whitesmoke;
 }
+
 .meal-item:hover {
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
@@ -157,7 +134,7 @@ a {
 footer {
   height: 70px;
   border: 1.5px solid black;
-  color: hsla(240,7%,100%,1);
+  color: hsla(240, 7%, 100%, 1);
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -165,7 +142,6 @@ footer {
   background-color: black;
   padding-left: 2rem;
 }
-
 
 .modal-details {
   position: fixed;
@@ -236,6 +212,7 @@ footer {
   align-items: center;
   margin: 0 7rem;
 }
+
 #list-meal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

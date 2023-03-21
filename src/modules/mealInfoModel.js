@@ -1,4 +1,4 @@
-const modalDetailsContent = document.querySelector('.modal-details-content');
+const modalDetailsContent = document.querySelector(".modal-details-content");
 function mealInfoModal(meal) {
   const {
     strMeal,
@@ -26,6 +26,6 @@ function mealInfoModal(meal) {
             </div>
     `;
   modalDetailsContent.innerHTML = html;
-  modalDetailsContent.parentElement.classList.add('showModal');
+  modalDetailsContent.parentElement.classList.add("showModal");
 }
 export default mealInfoModal;
