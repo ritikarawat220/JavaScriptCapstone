@@ -10,8 +10,7 @@ const fetchFucntion = () => {
         <p>${meal.strMeal}</p>
         <img src='${meal.strMealThumb}'>
         <p>${meal.strCategory}</p>
-        <button class='comment'>Comment</button>
-        <button class='comment'>Resevation</button>
+        <button class="comment">Comment</button>
         `;
         foodDiv.innerHTML = foodInfo;
         foodItemsDiv.appendChild(foodDiv);
