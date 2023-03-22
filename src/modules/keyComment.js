@@ -2,6 +2,7 @@
 
 const url = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/";
 const commentKey = "0rbHxJDKrB4PJ7lv391q";
+const involvementApiComments = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/0rbHxJDKrB4PJ7lv391q/comments/";
 
 
 // get the comments

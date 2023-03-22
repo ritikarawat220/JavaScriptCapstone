@@ -28,6 +28,7 @@ function mealInfoModal(meal) {
               <h3 class="modal-title">Comments</h3>             
             </div>
             <div class="show-comments">Hello</div>
+            <div class="show-comments">Very Delicious</div>
             <div class="add-comment">            
               <form action="#" class="form">
                 <h3>Add a comment</h3>

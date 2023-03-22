@@ -9,6 +9,9 @@
 body {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -45,14 +48,14 @@ a {
 }
 
 .comment:hover {
-  background-color: rgb(232, 13, 155);
+  background: linear-gradient(135deg, rgb(51, 255, 0), #ff00a6);
   color: #fff;
   margin-top: 1rem;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
-  transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
+  /* transform: scale(1.1); */
+  /* transition: all 0.5s ease-in-out; */
 }
 
 .header {
@@ -125,7 +128,7 @@ a {
 }
 
 .meal-name p {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 footer {
@@ -214,4 +217,55 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0 1rem;
+}
+
+.comment-btn {
+  margin-top: 2rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+}
+
+.show-comments {
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  font-size: 41px;
+  color: black;
+}
+
+.add-comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 7rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.comment-submit {
+  margin-top: 2rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
 }
