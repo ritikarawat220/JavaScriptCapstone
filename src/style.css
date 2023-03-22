@@ -35,6 +35,7 @@ a {
 .comment {
   width: 70%;
   height: 30px;
+  font-size: medium;
 }
 
 .comment:hover {
@@ -44,9 +45,6 @@ a {
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
-
-  /* transform: scale(1.1); */
-
   /* transition: all 0.5s ease-in-out; */
 }
 
