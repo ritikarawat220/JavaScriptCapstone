@@ -2,7 +2,8 @@ import "./style.css";
 import fetchFucntion from "./modules/Api";
 import fetchLikes from "./modules/like.js";
 fetchFucntion();
-fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes")
+
+fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${meal.idMeal}/")
   .then(response => response.json())
   .then(object =>{
     fetchLikes(object);

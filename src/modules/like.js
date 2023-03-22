@@ -1,5 +1,5 @@
 
-    fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${meal.idMeal}/")
+fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${meal.idMeal}/")
     .then(response => response.json())
     .then(object =>{
         fetchLikes(object);
@@ -22,6 +22,7 @@
         }
         likebtn.classList.add("liked");
       }
+      
       likebtn.addEventListener("click", incrementLikes);
       boredomActivity.appendChild(likebtn);
       boredomActivity.appendChild(likeCount);

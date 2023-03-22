@@ -1,3 +1,4 @@
+import  fetchLikes  from "./like.js";
 import getMealInfo from "./mealinfo.js";
 
 
@@ -23,7 +24,7 @@ const displayFoods = () => {
           <p>${meal.strMeal}</p>
           <li class="like"><button class="like-btn"><i class="fa-regular fa-heart"></i></button></li>
           </div>
-          <p><span class="like-count">0 Likes</span></p>
+          <span class="like-count">0 Likes</span>
           <button class = "comment">Comment</button>
         </div>
       </div>
@@ -31,16 +32,24 @@ const displayFoods = () => {
       });
 
       foodItemsDiv.innerHTML = html;
-      document.querySelectorAll(".like-btn").forEach((btn) => {
+      const likeButtons = document.querySelectorAll(".like-btn");
+      likeButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const mealId = btn.closest(".meal-item").getAttribute("data-id");
-          fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${mealId}`, { method: "POST" })
+          fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${mealId}/`, { method: "POST" })
             .then(response => response.json())
             .then(object => {
-              fetchLikes(object);
+              let likes=0;
+              likes++;
+              const likeCounter = btn.closest(".meal-item").querySelector(".like-count");
+              likeCounter.innerHTML= `${likes} Like`;
+              fetchLikes(object,btn);
+              btn.style.backgroundColor="red";
             });
         });
       });
+      
+      
     });
 };
 
