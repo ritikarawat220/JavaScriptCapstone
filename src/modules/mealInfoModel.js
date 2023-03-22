@@ -26,7 +26,7 @@ function mealInfoModal(meal) {
       </div>
     </div>
     <div class="comment-btn">
-      <h3 class="modal-title">Comments</h3>
+        <h3 class="modal-title">Comments <span class="comment-count"></span></h3>
     </div>
     <div class="show-comments" data-meal="${strMeal}"></div>
     <div class="add-comment">
@@ -67,21 +67,23 @@ function mealInfoModal(meal) {
     commentInput.value = "";
 
     // Display the new comment in the comment section
-    const html = `<div class="comment">
+    const html = `<div class="comment-info">
                     <p class="comment-info">${comment.name} : ${comment.comment}</p>
                   </div>`;
     commentSection.insertAdjacentHTML("beforeend", html);
   });
 
   // Display any existing comments on page load
-  let comments = JSON.parse(localStorage.getItem(`comments_${mealName}`)) || [];
-  comments.forEach((comment) => {
-  const html = `<div class="comment">
-                  <p class="comment-info">${comment.name} : ${comment.comment}</p>
-                </div>`;
+let comments = JSON.parse(localStorage.getItem(`comments_${mealName}`)) || [];
+const commentCount = comments.length;
+const commentCountElement = document.querySelector(".comment-count");
+commentCountElement.textContent = `(${commentCount})`;
+comments.forEach((comment) => {
+  const html = `<div class="comment-info">
+    <p class="comment-info">${comment.name} : ${comment.comment}</p>
+  </div>`;
   commentSection.insertAdjacentHTML("beforeend", html);
 });
-
 
 }
 export default mealInfoModal;

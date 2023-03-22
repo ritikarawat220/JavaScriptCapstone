@@ -14,7 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-
 .logo {
   width: 10%;
   border-radius: 50px;
@@ -53,7 +52,9 @@ a {
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
+
   /* transform: scale(1.1); */
+
   /* transition: all 0.5s ease-in-out; */
 }
 
@@ -172,7 +173,7 @@ footer {
 }
 
 .modal-details-content {
-  margin: 2rem;
+  margin: 3rem;
 }
 
 .modal-close-btn {
@@ -228,6 +229,7 @@ footer {
   letter-spacing: 1px;
   padding-bottom: 1rem;
   text-align: center;
+  font-family: cursive;
 }
 
 h3 {
@@ -238,7 +240,7 @@ h3 {
   color: black;
 }
 
-.add-comment{
+.add-comment {
   display: flex;
   flex-direction: column;
   justify-content: center;
