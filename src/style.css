@@ -218,3 +218,10 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 0 1rem;
 }
+.logo{
+  width: 10%;
+  border-radius: 50px;
+  background-image: url(./images/logo.png);
+  background-repeat: no-repeat;
+  background-size: 10%;
+}
