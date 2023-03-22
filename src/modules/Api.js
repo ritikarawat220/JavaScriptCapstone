@@ -27,6 +27,7 @@ const displayFoods = () => {
       </div>
       `;
       });
+
       foodItemsDiv.innerHTML = html;
     });
 };

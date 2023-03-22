@@ -222,7 +222,8 @@ footer {
   border-radius: 50px;
   background-image: url(./images/logo.png);
   background-repeat: no-repeat;
-  background-size: 10%;
+  background-position: center;
+  background-size: 100%;
 }
 .like{
   list-style: none;
@@ -236,5 +237,16 @@ footer {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+}
+.like-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.like-btn.liked {
+  background-color: red;
+  color: white;
 }
 

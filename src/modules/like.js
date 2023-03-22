@@ -7,7 +7,7 @@
 
     function fetchLikes(object){
       const likesDiv= document.querySelector(".like-div");
-      const boredomActivity=document.querySelector(".like");
+      const boredomActivity=document.createElement("p");
       boredomActivity.innerHTML= object.activity;
       const likebtn= document.querySelector(".like-btn");
       const likeCount= document.querySelector(".like-count");
@@ -15,8 +15,18 @@
       let likes = 0;
       function incrementLikes(){
         likes++;
-        likeCount.innerHTML= likes;
+        if(likes===1){
+        likeCount.innerHTML= `${likes} Like`;
+        }else{
+            likeCount.innerHTML= `${likes} Likes`;
+        }
+        likebtn.classList.add("liked");
       }
-      
+      likebtn.addEventListener("click", incrementLikes);
+      boredomActivity.appendChild(likebtn);
+      boredomActivity.appendChild(likeCount);
+      likesDiv.appendChild(boredomActivity);
+
 
     }
+    export default fetchLikes;
