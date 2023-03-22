@@ -17,8 +17,11 @@ const displayFoods = () => {
           <img src='${meal.strMealThumb}'>
         </div>
         <div class = "meal-name">
+        <div class="like-div">
           <p>${meal.strMeal}</p>
-          <p>Category: ${meal.strCategory}</p>
+          <li class="like"><button class="like-btn"><i class="fa-regular fa-heart"></i></button></li>
+          </div>
+          <p><span class="like-count">0 Likes</span></p>
           <button class = "comment">Comment</button>
         </div>
       </div>

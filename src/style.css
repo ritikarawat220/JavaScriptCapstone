@@ -225,3 +225,17 @@ footer {
   background-repeat: no-repeat;
   background-size: 10%;
 }
+.like{
+  list-style: none;
+  padding-left:20px ;
+}
+.like-div{
+  display: flex;
+  flex-direction: row;
+}
+.like-count{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
