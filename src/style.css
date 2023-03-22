@@ -45,17 +45,18 @@ a {
 .comment {
   width: 70%;
   height: 30px;
+  font-size: medium;
 }
 
 .comment:hover {
-  background-color: rgb(232, 13, 155);
+  background: linear-gradient(135deg, rgb(51, 255, 0), #ff00a6);
   color: #fff;
   margin-top: 1rem;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
   transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
 }
 
 .header {
@@ -128,7 +129,7 @@ a {
 }
 
 .meal-name p {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 footer {
