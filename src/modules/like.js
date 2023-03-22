@@ -1,6 +1,6 @@
 
-    fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes")
-    .then(response => response.jason())
+    fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${meal.idMeal}/")
+    .then(response => response.json())
     .then(object =>{
         fetchLikes(object);
     });
@@ -26,7 +26,6 @@
       boredomActivity.appendChild(likebtn);
       boredomActivity.appendChild(likeCount);
       likesDiv.appendChild(boredomActivity);
-
 
     }
     export default fetchLikes;

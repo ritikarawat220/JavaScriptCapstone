@@ -1,5 +1,7 @@
 import getMealInfo from "./mealinfo.js";
 
+
+
 const foodItemsDiv = document.getElementById("list-meal");
 
 // event listeners
@@ -29,6 +31,16 @@ const displayFoods = () => {
       });
 
       foodItemsDiv.innerHTML = html;
+      document.querySelectorAll(".like-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const mealId = btn.closest(".meal-item").getAttribute("data-id");
+          fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${mealId}`, { method: "POST" })
+            .then(response => response.json())
+            .then(object => {
+              fetchLikes(object);
+            });
+        });
+      });
     });
 };
 
