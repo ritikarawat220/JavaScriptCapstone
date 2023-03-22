@@ -5,7 +5,7 @@ const commentKey = "0rbHxJDKrB4PJ7lv391q";
 const involvementApiComments = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/0rbHxJDKrB4PJ7lv391q/comments/";
 
 
-// get the comments
+
 const getComments = async (id) => {
   const result = await fetch(`${url}${commentKey}/comments?item_id=${id}`);
   const dataResult = await result.json();
