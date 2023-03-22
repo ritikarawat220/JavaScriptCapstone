@@ -14,14 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-.logo {
-  width: 10%;
-  border-radius: 50px;
-  background-image: url(./images/logo.png);
-  background-repeat: no-repeat;
-  background-size: 10%;
-}
-
 a {
   text-decoration: none;
   font-size: 45px;
@@ -217,6 +209,16 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0 1rem;
+}
+
+.logo {
+  width: 13%;
+  height: 80px;
+  border-radius: 50px;
+  background-image: url(./images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 
 .comment-btn {
