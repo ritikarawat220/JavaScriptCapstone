@@ -1,9 +1,7 @@
-// import displayFoods from './displayFoods.js';
+// import displayFoods from './Api.js';
 
 const url = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/";
 const commentKey = "0rbHxJDKrB4PJ7lv391q";
-const involvementApiComments = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/0rbHxJDKrB4PJ7lv391q/comments/";
-
 
 
 const getComments = async (id) => {
