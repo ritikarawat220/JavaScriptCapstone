@@ -2,10 +2,10 @@
  * @jest-environment jsdom
  */
 
-import commentCount from '../modules/commentCounter.js';
+import commentCount from "../src/modules/commentCounter.js";
 
-describe('Counters', () => {
-  it('Comments counters', () => {
+describe("Counters", () => {
+  it("Comments counters", () => {
     document.body.innerHTML = `<div class="left">
   <p class="eachScore">
     2022-09-01
@@ -15,7 +15,7 @@ describe('Counters', () => {
     <p class="numberSc">Great</p>
   </span>
 </div>`;
-    const count = document.querySelectorAll('.left');
+    const count = document.querySelectorAll(".left");
     expect(commentCount(count)).toBe(1);
   });
 });
