@@ -45,6 +45,7 @@ a {
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
+
   /* transition: all 0.5s ease-in-out; */
 }
 
@@ -223,7 +224,6 @@ footer {
   background-size: 100%;
 }
 
-
 .comment-btn {
   margin-top: 2rem;
   padding: 0.5rem 0.9rem;
@@ -274,11 +274,13 @@ textarea {
   margin-top: 2rem;
   padding: 0.5rem 0.9rem;
   border-radius: 5px;
+}
 
 .like {
   list-style: none;
   padding-left: 20px;
 }
+
 
 .like-div {
   display: flex;
@@ -301,5 +303,4 @@ textarea {
 .liked {
   background-color: red;
   color: white;
-
 }
