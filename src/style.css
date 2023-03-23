@@ -245,7 +245,7 @@ footer {
   cursor: pointer;
 }
 
-.like-btn.liked {
+.liked {
   background-color: red;
   color: white;
 }

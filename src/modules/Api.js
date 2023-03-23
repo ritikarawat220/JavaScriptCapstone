@@ -45,6 +45,7 @@ const displayFoods = () => {
               likeCounter.innerHTML= `${likes} Like`;
               fetchLikes(object,btn);
               btn.style.backgroundColor="red";
+              likeButtons.classList.add("liked");
             });
         });
       });
