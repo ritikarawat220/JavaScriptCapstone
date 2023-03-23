@@ -21,7 +21,7 @@ None
 [Live Demo Link]()
 
 ## Demo Video from Authors
-[https://www.loom.com/share/b37242c978ae4aa4af8ec7ac473e2fac]()
+[https://www.loom.com/share/b37242c978ae4aa4af8ec7ac473e2fac](see presentation video)
 
 ## Getting Started
 
