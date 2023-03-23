@@ -1,5 +1,5 @@
 const commentCount = () => {
-    const count = document.querySelectorAll('.left');
+    const count = document.querySelectorAll(".left");
     return count.length;
   };
   

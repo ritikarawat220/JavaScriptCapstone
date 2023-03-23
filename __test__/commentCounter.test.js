@@ -1,9 +1,10 @@
+/* eslint-disable no-undef */
 /**
  * @jest-environment jsdom
  */
 
 import commentCount from "../src/modules/commentCounter.js";
-
+/* eslint-disable */
 describe("Counters", () => {
   it("Comments counters", () => {
     document.body.innerHTML = `<div class="left">

@@ -86,7 +86,7 @@ comments.forEach((comment) => {
 });
 
 const commentsDisplay = document.getElementById("commentsDisplay");
-
+/* eslint-disable */
   const myComments = () => {
     getData(`${url}${key}/comments?item_id=${idMeal}`)
       .then(async (res) => {
