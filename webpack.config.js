@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
     mode: "development",
    entry: "./src/index.js",
    output: {
-     filename: "[name].js",
+     filename: "main.js",
      path: path.resolve(__dirname, "dist"),
      clean: true,
    },
