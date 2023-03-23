@@ -37,5 +37,5 @@ fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/W
   .then(object =>{
     fetchLikes(object);
   })
-  .catch(error => console.log(error));
+  .catch(error =>(error));
 
