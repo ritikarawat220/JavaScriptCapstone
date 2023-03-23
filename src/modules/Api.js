@@ -2,6 +2,7 @@
 import getMealInfo from "./mealinfo.js";
 import fetchLikes from "./like.js";
 
+
 const foodItemsDiv = document.getElementById("list-meal");
 
 // event listeners

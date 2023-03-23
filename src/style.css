@@ -45,7 +45,6 @@ a {
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
-  transform: scale(1.1);
 
   /* transition: all 0.5s ease-in-out; */
 }
@@ -164,7 +163,7 @@ footer {
 }
 
 .modal-details-content {
-  margin: 2rem;
+  margin: 3rem;
 }
 
 .modal-close-btn {
@@ -223,6 +222,58 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+}
+
+.comment-btn {
+  margin-top: 2rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+}
+
+.show-comments {
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: cursive;
+}
+
+h3 {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  font-size: 41px;
+  color: black;
+}
+
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 7rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.comment-submit {
+  margin-top: 2rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
 }
 
 .like {
