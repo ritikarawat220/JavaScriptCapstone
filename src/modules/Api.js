@@ -1,5 +1,6 @@
 import getMealInfo from "./mealinfo.js";
 
+
 const foodItemsDiv = document.getElementById("list-meal");
 
 // event listeners
