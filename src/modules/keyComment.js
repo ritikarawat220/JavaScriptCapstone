@@ -2,7 +2,7 @@
 
 
 const url = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/";
-const commentKey = "0rbHxJDKrB4PJ7lv391q";
+const commentKey = "oVkHOTfBlO1iBwGU9e4E";
 
 const getComments = async (id) => {
 const result = await fetch(`${url}${commentKey}/comments?item_id=${id}`);

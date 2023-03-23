@@ -5,7 +5,7 @@ import { getComments , postComment } from "./modules/keyComment.js";
 
 /* const url =
   "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/";
-const commentKey = "0rbHxJDKrB4PJ7lv391q"; */
+const commentKey = "oVkHOTfBlO1iBwGU9e4E"; */
 
 const userName = document.getElementById("input-name");
 const comment = document.getElementById("comment-text");
