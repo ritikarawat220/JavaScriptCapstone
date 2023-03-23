@@ -1,7 +1,7 @@
 {
   "name": "javascriptcapstone",
   "version": "1.0.0",
-  "description": "",
+  "description": "> Description the project.\r The MealDB is a web application that has a list of foods. The web application was built based on two APi's, which are the Meals DB and the Involvement API. The web app makes APi call to render a list of meals and also make another API call when a user likes or comment.",
   "private": true,
   "scripts": {
     "test": "jest",
@@ -40,6 +40,7 @@
     "hint": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "style-loader": "^3.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
