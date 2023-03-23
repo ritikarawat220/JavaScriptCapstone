@@ -9,7 +9,7 @@ describe('Counters', () => {
     document.body.innerHTML = `<div class="left">
   <p class="eachScore">
     2022-09-01
-    <span>Federico:</span>
+    <span>Ritika:</span>
   </p>
   <span>
     <p class="numberSc">Great</p>
