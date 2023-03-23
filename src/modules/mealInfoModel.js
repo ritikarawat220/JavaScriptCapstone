@@ -85,5 +85,39 @@ comments.forEach((comment) => {
   commentSection.insertAdjacentHTML("beforeend", html);
 });
 
+const commentsDisplay = document.getElementById("commentsDisplay");
+
+  const myComments = () => {
+    getData(`${url}${key}/comments?item_id=${idMeal}`)
+      .then(async (res) => {
+        const array = await res.json();
+        return array;
+      })
+      .then((array) => {
+        const gege = array
+          .map(
+            (items) => `
+    <div class="left">
+      <p class="eachScore">${items.creation_date} 
+      <span>${items.username}:
+      </span> 
+      </p>
+      <span>
+      <p class="numberSc" id="comreload">${items.comment}</p>
+      </span>
+      </div>`
+          )
+          .join(" ");
+        commentsDisplay.innerHTML = gege;
+      });
+  };
+  myComments();
+  
+  setTimeout(() => {
+    const total = commentCount();
+    const counter = document.getElementById("modal-title");
+    counter.innerHTML = `Comments (${total})`;
+  }, 2000);
 }
+
 export default mealInfoModal;
