@@ -18,10 +18,10 @@ None
 
 ## Live Demo 
 
-[Live Demo Link]()
+[Live Demo Link](https://ritikarawat220.github.io/JavaScriptCapstone/dist/)
 
 ## Demo Video from Authors
-[https://www.loom.com/share/b37242c978ae4aa4af8ec7ac473e2fac](see presentation video)
+[Presentation Video](https://www.loom.com/share/b37242c978ae4aa4af8ec7ac473e2fac)
 
 ## Getting Started
 
