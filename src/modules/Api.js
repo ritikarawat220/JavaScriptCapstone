@@ -1,5 +1,6 @@
 
 import getMealInfo from "./mealinfo.js";
+import fetchLikes from "./like.js";
 
 const foodItemsDiv = document.getElementById("list-meal");
 
@@ -50,6 +51,7 @@ const displayFoods = () => {
                 likeCounter.innerHTML = `${likes} Likes`;
               }
               btn.style.backgroundColor = "red";
+              fetchLikes(object);
               // Store the likes data in localStorage
               const likesData = JSON.parse(localStorage.getItem("likesData")) || {};
               likesData[mealId] = likes;
