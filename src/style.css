@@ -45,7 +45,6 @@ a {
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
   border: none;
-
   /* transition: all 0.5s ease-in-out; */
 }
 
@@ -210,14 +209,20 @@ footer {
 }
 
 .logo {
-  width: 13%;
-  height: 80px;
+  width: 10%;
   border-radius: 50px;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-image: url(./images/logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
+
 
 .comment-btn {
   margin-top: 2rem;
@@ -269,4 +274,32 @@ textarea {
   margin-top: 2rem;
   padding: 0.5rem 0.9rem;
   border-radius: 5px;
+
+.like {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.like-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.like-count {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.like-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.liked {
+  background-color: red;
+  color: white;
+
 }
