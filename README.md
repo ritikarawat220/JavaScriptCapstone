@@ -47,7 +47,7 @@ The MealDB is a web application that has a list of foods. The web application wa
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Here is the link to the live demo version - [live demo..](https://ritikarawat220.github.io/JavaScriptCapstone/dist/)
+- Here is the link to the live demo version - [live demo coming soon..])
 
 ## Demo Video from Authors
 [Presentation Video](https://www.loom.com/share/b37242c978ae4aa4af8ec7ac473e2fac)
