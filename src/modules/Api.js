@@ -1,6 +1,5 @@
 
 import getMealInfo from "./mealinfo.js";
-import fetchLikes from "./like.js";
 
 
 const foodItemsDiv = document.getElementById("list-meal");
@@ -36,63 +35,15 @@ const displayFoods = () => {
 
       foodItemsDiv.innerHTML = html;
       const likeButtons = document.querySelectorAll(".like-btn");
+const API_URL = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B";
 
-      const updateLikes = async (btn, likes) => {
-        const mealItem = btn.closest(".meal-item");
-        const likeCounter = mealItem.querySelector(".like-count");
-        const mealId = mealItem.getAttribute("data-id");
-        try {
-          const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes?item_id=${mealId}`);
-          const likesText = await response.text();
-          if (likesText.startsWith("Created")) {
-            likes++;
-          } else {
-            const likesJson = JSON.parse(likesText);
-            likes = likesJson.length;
-          }
-        } catch (error) {
-          console.error(error);
-        }
-        if (likes === 1) {
-          likeCounter.innerHTML = `${likes} Like`;
-        } else {
-          likeCounter.innerHTML = `${likes} Likes`;
-        }
-        btn.style.backgroundColor = "";
-  btn.addEventListener("click", () => {
-    likes += 1;
-    if (likes === 1) {
-      likeCounter.innerHTML = `${likes} Like`;
-    } else {
-      likeCounter.innerHTML = `${likes} Likes`;
-    }
-    btn.style.backgroundColor = "red";
-  });
-};
-      
-      
-      
+const updateLikes = async (mealItem, likes, btn) => {
+  const likeCounter = mealItem.querySelector(".like-count");
+  const mealId = mealItem.getAttribute("data-id");
 
-      const fetchLikes = async (mealId) => {
-        const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes?item_id=${mealId}`;
-        const response = await fetch(likesUrl);
-        try {
-          const likesJson = await response.json();
-          return likesJson.length;
-        } catch (error) {
-          console.error(error);
-          return 0;
-        }
-      };
-      
-
-likeButtons.forEach((btn) => {
-  const mealId = btn.closest(".meal-item").getAttribute("data-id");
-  fetchLikes(mealId).then((likes) => {
-    updateLikes(btn, likes);
-  });
-  btn.addEventListener("click", () => {
-    fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes", {
+  try {
+    // Send request to API to update like count
+    const response = await fetch(`${API_URL}/likes`, {
       method: "POST",
       body: JSON.stringify({
         item_id: mealId,
@@ -100,122 +51,76 @@ likeButtons.forEach((btn) => {
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
       },
-    })
-      .then((response) => response.text())
-      .then((text) => {
-        if (text.startsWith("Created")) {
-          // The API returned a non-JSON response
-          return like++;
-        } else {
-          const object = JSON.parse(text);
-          return object.likes.length;
-        }
-      })
-      .then((likes) => {
-        updateLikes(btn, likes);
-      })
-      .catch((error) => console.log(error));
-      btn.style.backgroundColor = "red";
+    });
+
+    const data = await response.json();
+    likes = data.likes.length;
+
+    // Update local storage with latest like count
+    localStorage.setItem(`meal-${mealId}-likes`, likes);
+
+    // Update local storage with current user's like
+    const userLikes = JSON.parse(localStorage.getItem("user-likes")) || {};
+    userLikes[mealId] = true;
+    localStorage.setItem("user-likes", JSON.stringify(userLikes));
+  } catch (error) {
+    console.error(error);
+  }
+
+  // Get current like count from local storage and add 1 to it
+  const currentLikes = localStorage.getItem(`meal-${mealId}-likes`);
+  likes = currentLikes ? parseInt(currentLikes) + 1 : 1;
+
+  // Update local storage with new like count
+  localStorage.setItem(`meal-${mealId}-likes`, likes);
+
+  // Update UI with new like count
+  if (likes === 1) {
+    likeCounter.innerHTML = `${likes} Like`;
+  } else {
+    likeCounter.innerHTML = `${likes} Likes`;
+  }
+  btn.style.backgroundColor = "red";
+};
+
+const fetchLikes = async (mealId) => {
+  try {
+    const response = await fetch(`${API_URL}/likes?item_id=${mealId}`);
+    const data = await response.json();
+    const likes = data.likes.length;
+
+    // Update local storage with latest like count
+    localStorage.setItem(`meal-${mealId}-likes`, likes);
+
+    // Update like count with current user's like
+    const userLikes = JSON.parse(localStorage.getItem("user-likes")) || {};
+    const currentUserLikes = userLikes[mealId];
+    if (currentUserLikes) {
+      likes++;
+    }
+
+    return likes;
+  } catch (error) {
+    console.error(error);
+
+    // If API request fails, return like count from local storage
+    const likes = localStorage.getItem(`meal-${mealId}-likes`);
+    return likes ? parseInt(likes) : 0;
+  }
+};
+
+likeButtons.forEach((btn) => {
+  const mealItem = btn.closest(".meal-item");
+  const mealId = mealItem.getAttribute("data-id");
+  fetchLikes(mealId).then((likes) => {
+    updateLikes(mealItem, likes, btn);
+
+    // Add event listener to button
+    btn.addEventListener("click", () => {
+      updateLikes(mealItem, likes, btn);
+    });
   });
-  
 });
-
-//       const likeButtons = document.querySelectorAll(".like-btn");
-//       const updateLikes = (btn, likes) => {
-//         const likeCounter = btn.closest(".meal-item").querySelector(".like-count");
-//         const currentLikes = parseInt(likeCounter.innerHTML.split(" ")[0]);
-//         const newLikes = currentLikes + 1;
-//         if (newLikes === 1) {
-//           likeCounter.innerHTML = `${newLikes} Like`;
-//         } else {
-//           likeCounter.innerHTML = `${newLikes} Likes`;
-//         }
-//         btn.style.backgroundColor = "red";
-//       };
-      
-// // const updateLikes = (btn, likes) => {
-// //   const likeCounter = btn.closest(".meal-item").querySelector(".like-count");
-// //   if (likes === 1) {
-// //     likeCounter.innerHTML = `${likes} Like`;
-// //   } else {
-// //     likeCounter.innerHTML = `${likes} Likes`;
-// //   }
-// //   btn.style.backgroundColor = "red";
-// // };
-
-// const fetchLikes = async (mealId) => {
-//   const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes?item_id=${mealId}`;
-//   const response = await fetch(likesUrl);
-//   const likes = await response.json();
-//   return likes.length;
-// };
-
-
-// const fetchLikes = async (mealId) => {
-//   const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes?item_id=${mealId}`;
-//   const response = await fetch(likesUrl);
-//   const likes = await response.json();
-//   return likes.length;
-// };
-
-// likeButtons.forEach((btn) => {
-//   const mealId = btn.closest(".meal-item").getAttribute("data-id");
-//   fetchLikes(mealId).then((likes) => {
-//     updateLikes(btn, likes);
-//   });
-//   btn.addEventListener("click", () => {
-//     fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes", {
-//       method: "POST",
-//       body: JSON.stringify({
-//         item_id: mealId,
-//       }),
-//       headers: {
-//         "Content-Type": "application/json; charset=UTF-8",
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((object) => {
-//         fetchLikes(mealId).then((likes) => {
-//           updateLikes(btn, likes);
-//         });
-//       });
-//   });
-// });
-
-    //   const likeButtons = document.querySelectorAll(".like-btn");
-    //   likeButtons.forEach((btn) => {
-    //     btn.addEventListener("click", () => {
-    //       const mealId = btn.closest(".meal-item").getAttribute("data-id");
-    //       fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${mealId}`, {method: "POST",
-    //       body: JSON.stringify({ 
-           
-    //         item_id: "item1"
-    //       }),
-    //       headers: {
-    //         "Content-Type": "application/json; charset=UTF-8",
-    //       }})
-    //         .then((response) => response.json())
-    //         .then((object) => {
-    //           const likeCounter = btn.closest(".meal-item").querySelector(".like-count");
-    //           let likes = parseInt(likeCounter.innerHTML);
-    //           likes++;
-    //           if (likes === 1) {
-    //             likeCounter.innerHTML = `${likes} Like`;
-    //           } else {
-    //             likeCounter.innerHTML = `${likes} Likes`;
-    //           }
-    //           btn.style.backgroundColor = "red";
-    //           fetchLikes(object);
-    //     });
-    //     const getlikes = async (mealId) => {
-    //       const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${mealId}`;
-    //       const response = await fetch(likesUrl);
-    //       const likes = await response.json();
-    //       return likes;
-        
-    //     }; 
-    //   });  
-    // });
 });
 };
 
