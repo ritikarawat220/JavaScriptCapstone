@@ -82,15 +82,6 @@ const getLike = async (mealId) => {
   return data.likes || 0; // return the number of likes or 0 if it doesn't exist
 };
 
-
-// Get the number of comments for a meal from the API
-const getComment = async (mealId) => {
-  const response = await fetch(`${commentsUrl}?item_id=${mealId}`);
-  const comments = await response.json();
-  
-  return comments.length;
-};
-
     });
 };
 
