@@ -141,7 +141,7 @@ footer {
   background: slategray;
   border-radius: 1rem;
   width: 60%;
-  height: 60%;
+  height: 70%;
   overflow-y: scroll;
   display: none;
   padding: 2rem 0;
@@ -162,7 +162,7 @@ footer {
 }
 
 .modal-details-content {
-  margin: 3rem;
+  /* margin: 3rem; */
 }
 
 .modal-close-btn {
@@ -224,13 +224,11 @@ footer {
 }
 
 .comment-btn {
-  margin-top: 2rem;
   padding: 0.5rem 0.9rem;
   border-radius: 8px;
 }
 
 .show-comments {
-  letter-spacing: 1px;
   padding-bottom: 1rem;
   text-align: center;
   font-family: cursive;
@@ -270,7 +268,6 @@ textarea {
 }
 
 .comment-submit {
-  margin-top: 2rem;
   padding: 0.5rem 0.9rem;
   border-radius: 5px;
 }
