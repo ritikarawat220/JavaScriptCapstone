@@ -141,7 +141,6 @@ footer {
   background: slategray;
   border-radius: 1rem;
   width: 60%;
-  height: 70%;
   overflow-y: scroll;
   display: none;
   padding: 2rem 0;
@@ -263,11 +262,11 @@ textarea {
   width: 100%;
   padding: 0.5rem;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgb(250, 12, 12);
   margin-bottom: 1rem;
 }
 
-.comment-submit {
+#submitBtn {
   padding: 0.5rem 0.9rem;
   border-radius: 5px;
 }
@@ -298,4 +297,20 @@ textarea {
 .liked {
   background-color: red;
   color: white;
+}
+
+#commentTitle {
+  color: black;
+  text-align: center;
+}
+
+#commentsDisplay {
+  font-family: cursive;
+  text-align: center;
+}
+
+.eachScore {
+  color: black;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
