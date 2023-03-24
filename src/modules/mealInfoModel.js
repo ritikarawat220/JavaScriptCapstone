@@ -107,7 +107,7 @@ function mealInfoModal(meal) {
           .map(
             (items) => `
     <div class="left">
-      <p class="eachScore">xcv bb                                      bbbbb nng
+      <p class="eachScore">
       <span>${items.username}: ${items.comment}
       </span> 
       </p>
