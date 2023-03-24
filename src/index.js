@@ -1,36 +1,17 @@
 import "./style.css";
-import fetchFucntion from "./modules/Api";
-
-import { getComments , postComment } from "./modules/keyComment.js";
-
-const userName = document.getElementById("input-name");
-const comment = document.getElementById("comment-text");
-const submit = document.querySelector(".comment-submit");
-
-fetchFucntion();
-getComments();
-postComment();
+import displayFoods from "./modules/Api";
 
 
-const clearInput = () => {
-  userName.value = "";
-  comment.value = "";
-};
 
-submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  postComment();
-  clearInput();
-  console.log("heloooo");
+displayFoods();
+// close modal window when clicking outside of it
+const modal = document.querySelector(".meal");
+
+
+const modalDetailsContent = document.querySelector(".modal-details-content");
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modalDetailsContent.parentElement.classList.remove("showModal");
+  }
 });
-
-import fetchLikes from "./modules/like.js";
-fetchFucntion();
-
-fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WxdOldIVe5Cky63nkl0B/likes/${meal.idMeal}/")
-  .then(response => response.json())
-  .then(object =>{
-    fetchLikes(object);
-  })
-  .catch(error =>(error));
-
