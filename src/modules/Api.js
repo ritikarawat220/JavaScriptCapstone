@@ -4,7 +4,6 @@ import getMealInfo from "./mealinfo.js";
 
 const foodItemsDiv = document.getElementById("list-meal");
 
-// event listeners
 foodItemsDiv.addEventListener("click", getMealInfo);
 
 const displayFoods = () => {
@@ -42,7 +41,6 @@ const updateLikes = async (mealItem, likes, btn) => {
   const mealId = mealItem.getAttribute("data-id");
 
   try {
-    // Send request to API to update like count
     const response = await fetch(`${API_URL}/likes`, {
       method: "POST",
       body: JSON.stringify({
@@ -55,26 +53,16 @@ const updateLikes = async (mealItem, likes, btn) => {
 
     const data = await response.json();
     likes = data.likes.length;
-
-    // Update local storage with latest like count
     localStorage.setItem(`meal-${mealId}-likes`, likes);
-
-    // Update local storage with current user's like
     const userLikes = JSON.parse(localStorage.getItem("user-likes")) || {};
     userLikes[mealId] = true;
     localStorage.setItem("user-likes", JSON.stringify(userLikes));
   } catch (error) {
     console.error(error);
   }
-
-  // Get current like count from local storage and add 1 to it
   const currentLikes = localStorage.getItem(`meal-${mealId}-likes`);
   likes = currentLikes ? parseInt(currentLikes) + 1 : 1;
-
-  // Update local storage with new like count
   localStorage.setItem(`meal-${mealId}-likes`, likes);
-
-  // Update UI with new like count
   if (likes === 1) {
     likeCounter.innerHTML = `${likes} Like`;
   } else {
@@ -88,22 +76,17 @@ const fetchLikes = async (mealId) => {
     const response = await fetch(`${API_URL}/likes?item_id=${mealId}`);
     const data = await response.json();
     const likes = data.likes.length;
-
-    // Update local storage with latest like count
     localStorage.setItem(`meal-${mealId}-likes`, likes);
-
-    // Update like count with current user's like
     const userLikes = JSON.parse(localStorage.getItem("user-likes")) || {};
     const currentUserLikes = userLikes[mealId];
     if (currentUserLikes) {
+      // eslint-disable-next-line no-const-assign
       likes++;
     }
 
     return likes;
   } catch (error) {
     console.error(error);
-
-    // If API request fails, return like count from local storage
     const likes = localStorage.getItem(`meal-${mealId}-likes`);
     return likes ? parseInt(likes) : 0;
   }
